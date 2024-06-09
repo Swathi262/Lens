@@ -1,0 +1,46 @@
+<!-- <p>login works!</p> -->
+<div style="min-width: 100%;min-height: 100%;width:100px;height:600px;background-image: url(https://cdn.wallpapersafari.com/7/86/gqiGH7.jpg);">
+  <br>
+<div class="container" style="max-width: 500px;background-color:white;">
+    <h2>User Login</h2> 
+    <form #loginform="ngForm" (ngSubmit)="loginUser()">
+      <small class="text-danger">{{msg}}</small>
+      <div class="form-group">
+        <label for="userName">Username:</label>
+        <input type="userName" class="form-control"  placeholder="Enter userName" name="userName" [(ngModel)]="user.userName"  #userName="ngModel">
+        <small class="text-danger" [class.d-none]="userName.valid || userName.untouched">username is required field</small> 
+
+      </div>
+      <div class="form-group">
+        <label for="pwd">Password:</label>
+        <input type="password" class="form-control"  placeholder="Enter password" name="password"  [(ngModel)]="user.password" #password="ngModel" required
+        [class.is-invalid]="password.invalid && password.touched"
+        >
+        <small class="text-danger" [class.d-none]="password.valid || password.untouched">password is required field</small>
+      </div>
+      <div class="checkbox">
+        <label><input type="checkbox" name="remember"> Remember me</label>
+      </div>
+
+      <!-- <div class="form-group">
+       <label for="role">role:</label>
+       <select class="form-select" id="floatingSelect" aria-label="role" [(ngModel)]="user.role">
+        <option value="1">ADMIN</option>
+        <option value="2">CUSTOMER</option>
+       </select>
+      </div> -->
+
+      <div class="form-group">
+        <label for="role">role:</label>
+        <input type="role" class="form-control" placeholder="Enter role" name="role" [(ngModel)]="user.role" #role="ngModel">
+      </div>
+      
+        <button type="submit" value="submit" class="btn btn-info" >Login </button>  
+        <small class="float-right" [routerLink]="['/registration']" >New user?Register here</small>
+       
+    </form>
+    <!-- <small class="float-right" (click)="gotoregistration()" >New user?Register here</small> -->
+    <!-- <small class="float-right" [routerLink]="['/registration']" >New user?Register here</small> -->
+    <br>
+  </div>
+  

@@ -1,0 +1,81 @@
+<!-- <p>registration works!</p> -->
+<div style="min-width: 100%;min-height: 100%;width:100px;height:600px;background-image: url(https://as2.ftcdn.net/v2/jpg/01/19/11/55/1000_F_119115529_mEnw3lGpLdlDkfLgRcVSbFRuVl6sMDty.jpg);">
+    <br>
+<div class="container" style="max-width: 500px;background-color:white;">
+    <h2 class="textual">User Registration</h2> 
+    <form #Registerform="ngForm" (ngSubmit)="registerUser()">
+       <!-- <small [class.text-danger]="msg.status==500">{{msg.message}}</small>  -->
+      <div class="form-group">
+        <label for="userName">Username:</label>
+        <input type="userName" class="form-control"  placeholder="Enter userName" name="userName" [(ngModel)]="user.userName"  #userName="ngModel" required [class.is-invalid]="userName.invalid && userName.touched">
+        <small class="text-danger" [class.d-none]="userName.valid || userName.untouched">username is required field</small> 
+
+      </div>
+      <div class="form-group">
+        <label for="pwd">Password:</label>
+        <input type="password" class="form-control"  placeholder="Enter password" name="password"  [(ngModel)]="user.password" #password="ngModel" required
+        [class.is-invalid]="password.invalid && password.touched"
+        >
+        <small class="text-danger" [class.d-none]="password.valid || password.untouched">password is required field</small>
+      </div>
+
+      
+      
+    
+    <div class="form-group">
+      <label for="pwd">Confirm Password:</label>
+      <input type="password" class="form-control"  placeholder="Enter confirm password" name="cpassword"   #cpassword="ngModel" required
+      [class.is-invalid]="cpassword.invalid && cpassword.touched"
+      ngModel>
+      <small class="text-danger" [class.d-none]="(cpassword.value == password.value)|| cpassword.untouched">password and confirm password should be same</small>
+
+    </div>
+    <div class="form-group">
+      <label for="name">Name:</label>
+      <input type="name" class="form-control"  placeholder="Enter name" name="name" [(ngModel)]="customer.name"  #name="ngModel" required [class.is-invalid]="name.invalid && name.touched">
+      <!-- <small class="text-danger" [class.d-none]="name.valid || name.untouched">name is required field</small>  -->
+
+    </div>
+
+
+
+
+
+  
+     <div class="form-group">
+    <label for="name">ContactNumber:</label>
+    <input type="contactNumber" class="form-control"  placeholder="Enter contact no" name="contactNumber" [(ngModel)]="customer.contactNumber"  #contactNumber="ngModel" required [class.is-invalid]="contactNumber.invalid && contactNumber.touched">
+     <!-- <small class="text-danger" [class.d-none]="name.valid || name.untouched">name is required field</small>  --> 
+
+  </div> 
+  <div class="form-group">
+    <label for="email">email:</label>
+    <input type="email" class="form-control"  placeholder="Enter email" name="email" [(ngModel)]="customer.email"  #email="ngModel" required [class.is-invalid]="email.invalid && email.touched">
+     <!-- <small class="text-danger" [class.d-none]="name.valid || name.untouched">name is required field</small>  --> 
+
+  </div>  
+
+  <div class="form-group">
+    <label for="address">address:</label>
+    <input type="address" class="form-control"  placeholder="Enter address" name="address" [(ngModel)]="customer.address"  #address="ngModel" required [class.is-invalid]="contactNumber.invalid && contactNumber.touched">
+     <!-- <small class="text-danger" [class.d-none]="name.valid || name.untouched">name is required field</small>  --> 
+
+  </div> 
+
+
+
+
+    
+
+     <button [disabled]="Registerform.form.invalid" type="submit" class="btn btn-info">Register</button>
+      
+         
+        <small class="float-right btextual" [routerLink]="['/login']" >Existing user?login here</small>
+       
+    </form>
+    <!-- <small class="float-right" (click)="gotoregistration()" >New user?Register here</small> -->
+    <!-- <small class="float-right" [routerLink]="['/registration']" >New user?Register here</small> -->
+    <br>
+    </div>
+  </div>
+

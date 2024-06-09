@@ -1,0 +1,45 @@
+
+<header>
+
+    <img src="../../assets/images/logo.png">
+
+    <nav id="navbar">
+
+      <ul>
+
+        <li><button class="btn btn-success" [routerLink]="['home']">Home</button></li>
+        <li><button class="btn btn-success" [routerLink]="['product']">Products</button></li>
+
+        <li>
+
+            <div class="dropdown">
+
+                <button class="btn btn-success">Categories</button>
+
+                <div class="dropdown-content">
+
+                  <a routerLink="/glasses" routerLinkActive="active-link">Glasses</a>
+
+                  <a routerLink="/sunglasses" routerLinkActive="active-link">Sunglasses</a>
+
+                  <a routerLink="/frame" routerLinkActive="active-link">Frames</a>
+
+                  <a routerLink="/lenses" routerLinkActive="active-link">Lenses</a>
+
+                </div>
+
+              </div>
+
+        </li>
+
+        <li><button class="btn btn-success" [routerLink]="['login']">Register/Login</button></li>
+
+        <li><button class="btn btn-success" >Cart</button></li>
+
+       
+
+      </ul>
+
+    </nav>
+
+  </header>

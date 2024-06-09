@@ -1,0 +1,9 @@
+
+.banner
+{
+ background-image: url('../../../assets/Images/lenskart.png');
+height: 500px;
+background-position: center top;
+background-size: cover;
+}
+
